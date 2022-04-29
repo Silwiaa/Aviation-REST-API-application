@@ -38,4 +38,9 @@ public class GlobalHttpErrorHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<Object> handleInvalidFlightNumberException(InvalidFlightNumberException invalidFlightNumberException) {
         return new ResponseEntity<>("Invalid flightNumber", HttpStatus.NOT_ACCEPTABLE);
     }
+
+    @ExceptionHandler(InvalidDateException.class)
+    public ResponseEntity<Object> handleInvalidDateException(InvalidDateException invalidDateException) {
+        return new ResponseEntity<>("Invalid date", HttpStatus.NOT_ACCEPTABLE);
+    }
 }
